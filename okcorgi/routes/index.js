@@ -4,7 +4,7 @@ var Corgi = require('../models/corgi');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Corgi.find({pawLeft: null, pawRight: null}, 'name age url pawRight', function(err, corgi) {
+  Corgi.findOne({pawLeft: null, pawRight: null}, 'name age url pawRight', function(err, corgi) {
     if (err) console.log(err);
     console.log(corgi);
 

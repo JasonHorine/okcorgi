@@ -4,11 +4,11 @@ var Corgi = require('../models/corgi');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Corgi.find({}, 'name age url pawRight', function(err, allCorgis) {
+  Corgi.find({pawLeft: null, pawRight: null}, 'name age url pawRight', function(err, corgi) {
     if (err) console.log(err);
-    console.log(allCorgis);
+    console.log(corgi);
 
-  res.render('index', { corgisArray: allCorgis });
+  res.render('index', { corgi: corgi });
   });
 });
 

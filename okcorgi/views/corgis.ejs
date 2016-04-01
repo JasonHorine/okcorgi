@@ -1,1 +1,15 @@
-This is the page that ha the corgis you liked!!!!!!
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Corgis</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>A list of all corgis with likes:</h1>
+    <% corgisArray.forEach(function(corgi){ %>
+    <% if (corgi.pawRight > 0){ %>
+    <p><%= corgi.name; %></p>
+    <% } %>
+    <% }) %>
+  </body>
+</html>

@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongoose connection – NEW CODE
 var mongoose = require('mongoose');
-mongoose.connect(process.env.okcorgi);
+mongoose.connect(process.env.DB_CON_MLAB_OKCORGIDB); // get the environment variable 'okcorgi'
 
-app.use('/', routes);
-app.use('/corgis', corgis);
+app.use('/', routes); // any navigation to the root goes to 'routes'
+app.use('/corgis', corgis); // navigation to corgis goes to 'corgis'
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
